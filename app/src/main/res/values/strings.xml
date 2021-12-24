@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">notifyListener</string>
+    <string name="app_name">FingenNotify</string>
+    <string name="add_button">Add package</string>
+    <string name="text_list_application">List applications package</string>
+    <string name="text_list_notify">List notify</string>
+    <string name="cancel">Cancel</string>
+    <string name="add">Add</string>
+    <string name="ok">Ok</string>
+
+    <string name="title_dialog_package_name">Package and sender name</string>
+    <string name="package_name">Package name</string>
+    <string name="sender_name">Sender name</string>
+
+    <string name="edit_package">Edit</string>
+    <string name="delete_package">Delete</string>
+
+    <string name="send_notify">Send Fingen</string>
+    <string name="delete_notify">Delete</string>
+    <string name="delete_all_notify">Delete all</string>
+
+    <string name="add_package">Add package</string>
+    <string name="save_notify">Save notify</string>
+    <string name="send_fingen">Send Fingen</string>
 </resources>

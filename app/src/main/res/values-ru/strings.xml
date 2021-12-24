@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">FingenNotify</string>
+    <string name="add_button">Добавить</string>
+    <string name="text_list_application">Список приложений для слежения за уведомлениями</string>
+    <string name="text_list_notify">Список уведомлений</string>
+    <string name="cancel">Отмена</string>
+    <string name="add">Добавить</string>
+    <string name="ok">Ok</string>
+
+    <string name="title_dialog_package_name">Имя пакета и отправителя</string>
+    <string name="package_name">Имя пакета</string>
+    <string name="sender_name">Имя отправителя</string>
+
+    <string name="edit_package">Редактировать</string>
+    <string name="delete_package">Удалить</string>
+
+    <string name="send_notify">Отправить в Fingen</string>
+    <string name="delete_notify">Удалить</string>
+    <string name="delete_all_notify">Удалить все</string>
+
+    <string name="add_package">Добавить приложение</string>
+    <string name="save_notify">Сохранять уведомления</string>
+    <string name="send_fingen">Отправлять в Fingen</string>
+</resources>

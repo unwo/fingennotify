@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/add_package"
+        android:title="@string/add_package"/>
+    <item
+        android:id="@+id/save_notify"
+        android:title="@string/save_notify"
+        android:checkable="true"/>
+    <item
+        android:id="@+id/send_fingen"
+        android:title="@string/send_fingen"
+        android:checkable="true"/>
+</menu>
