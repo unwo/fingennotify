@@ -49,10 +49,11 @@ public class notifyListenerService extends NotificationListenerService {
                         db.addNotify(pack, application.getSender(), title + " " + text);
                     }
                     if (db.getPreferenceValueBool(Constants.PREFERENCE_SEND_FINGEN,true)) {
-                        runIntent(pack, application.getSender(), title, text);
+                        runIntent(pack, application.getSender(), title + " " + text);
                     }
 
                     Intent intent = new Intent(Constants.BROADCAST_ACTION);
+                    intent.setPackage(getPackageName());
                     sendBroadcast(intent);
                 }
             }
@@ -63,7 +64,7 @@ public class notifyListenerService extends NotificationListenerService {
         }
     }
 
-    private void runIntent(String pack,String sender,String title, String text)
+    private void runIntent(String pack,String sender, String text)
     {
         SendFingen sf=new SendFingen(this,sender,text);
         //Toast.makeText(this,"pack: "+pack+" title: "+title+" text: "+text,Toast.LENGTH_LONG).show();

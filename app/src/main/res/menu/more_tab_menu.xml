@@ -12,4 +12,16 @@
         android:id="@+id/send_fingen"
         android:title="@string/send_fingen"
         android:checkable="true"/>
+    <item
+        android:id="@+id/export_db"
+        android:title="@string/export_db"/>
+    <item
+        android:id="@+id/import_db"
+        android:title="@string/import_db"/>
+    <item
+        android:id="@+id/export_package"
+        android:title="@string/export_package"/>
+    <item
+        android:id="@+id/import_package"
+        android:title="@string/import_package"/>
 </menu>

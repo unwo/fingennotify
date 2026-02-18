@@ -53,6 +53,38 @@ public class Db {
         calendar.setTimeInMillis(milliSeconds);
         return formatter.format(calendar.getTime());
     }
+    public List<Notify> getNotifyByDate(long startMs, long endMs)
+    {
+        List<Notify> notifications=new ArrayList<>();
+
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        Cursor c = db.query(Constants.TABLE_NOTIFY, null,
+                Constants.TABLE_NOTIFY_COLUMN_DATETIME + " >= ? AND " + Constants.TABLE_NOTIFY_COLUMN_DATETIME + " < ?",
+                new String[]{String.valueOf(startMs), String.valueOf(endMs)},
+                null, null, "dt desc");
+        if (c.moveToFirst()) {
+            int idColIndex = c.getColumnIndex(Constants.TABLE_NOTIFY_COLUMN_ID);
+            int nameColIndex = c.getColumnIndex(Constants.TABLE_NOTIFY_COLUMN_PACKAGE);
+            int senderColIndex = c.getColumnIndex(Constants.TABLE_NOTIFY_COLUMN_SENDER);
+            int messageColIndex = c.getColumnIndex(Constants.TABLE_NOTIFY_COLUMN_MESSAGE);
+            int dateTimeIndex = c.getColumnIndex(Constants.TABLE_NOTIFY_COLUMN_DATETIME);
+
+            do {
+                Notify a = new Notify();
+                a.setId(c.getInt(idColIndex));
+                a.setName(c.getString(nameColIndex));
+                a.setSender(c.getString(senderColIndex));
+                a.setMessage(c.getString(messageColIndex));
+                a.setDatetime(getDate(c.getLong(dateTimeIndex),Constants.DATETIME_FORMAT));
+                notifications.add(a);
+            } while (c.moveToNext());
+        }
+        c.close();
+        dbHelper.close();
+        return notifications;
+    }
+
     public List<Notify> getNotify()
     {
         List<Notify> notifications=new ArrayList<>();
@@ -134,6 +166,13 @@ public class Db {
     {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         int clearCount = db.delete(Constants.TABLE_NOTIFY, null, null);
+        dbHelper.close();
+    }
+
+    public void deleteAllApplications()
+    {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.delete(Constants.TABLE_PACKAGES, null, null);
         dbHelper.close();
     }
 

@@ -1,0 +1,26 @@
+[{
+        "package": "ru.alfabank.mobile.android",
+        "sender": "Alfa-bank"
+    }, {
+        "package": "ru.mts.money",
+        "sender": "MTS-Bank"
+    }, {
+        "package": "ru.nspk.mirpay",
+        "sender": "Mirpay"
+    }, {
+        "package": "ru.sberbankmobile",
+        "sender": "900"
+    }, {
+        "package": "ru.raiffeisennews",
+        "sender": "Raiffeisen"
+    }, {
+        "package": "ru.sovcomcard.halva.v1",
+        "sender": "Sovcombank"
+    }, {
+        "package": "ru.vtb24.mobilebanking.android",
+        "sender": "VTB"
+    }, {
+        "package": "ru.ozon.app.android",
+        "sender": "Ozon"
+    }
+]

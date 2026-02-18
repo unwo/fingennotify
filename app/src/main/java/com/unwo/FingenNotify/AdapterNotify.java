@@ -1,7 +1,8 @@
 package com.unwo.FingenNotify;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import android.graphics.Color;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ public class AdapterNotify extends RecyclerView.Adapter<AdapterNotify.ViewHolder
     static Context context;
 
     private List<Notify> Data=new ArrayList<>();
+    private int selectedPosition = -1;
 
 
     public AdapterNotify(Context context, List<Notify> list) {
@@ -43,15 +45,26 @@ public class AdapterNotify extends RecyclerView.Adapter<AdapterNotify.ViewHolder
         @Override
         public void onCreateContextMenu(ContextMenu menu, View v,
                                         ContextMenu.ContextMenuInfo menuInfo) {
-            menu.add(getAdapterPosition(),Constants.SEND_NOTIFY_FINGEN,0,context.getResources().getString(R.string.send_notify));
-            menu.add(getAdapterPosition(),Constants.DELETE_NOTIFY,1,context.getResources().getString(R.string.delete_notify));
-            menu.add(getAdapterPosition(),Constants.DELETE_ALL_NOTIFY,2,context.getResources().getString(R.string.delete_all_notify));
+            int pos = getAdapterPosition();
+            if (pos != RecyclerView.NO_POSITION) {
+                AdapterNotify adapter = (AdapterNotify) ((RecyclerView) v.getParent()).getAdapter();
+                if (adapter != null) {
+                    adapter.setSelectedPosition(pos);
+                }
+            }
+            menu.add(pos,Constants.SEND_NOTIFY_FINGEN,0,context.getResources().getString(R.string.send_notify));
+            menu.add(pos,Constants.DELETE_NOTIFY,1,context.getResources().getString(R.string.delete_notify));
+            menu.add(pos,Constants.DELETE_ALL_NOTIFY,2,context.getResources().getString(R.string.delete_all_notify));
         }
 
     }
 
     public List<Notify> getData() {
         return Data;
+    }
+
+    public void setData(List<Notify> list) {
+        Data = list;
     }
 
 
@@ -75,6 +88,12 @@ public class AdapterNotify extends RecyclerView.Adapter<AdapterNotify.ViewHolder
         holder.message.setText(Data.get(position).getMessage());
         holder.datetime.setText(Data.get(position).getDateTime());
         holder.sender.setText(Data.get(position).getSender());
+
+        if (position == selectedPosition) {
+            holder.itemView.setBackgroundColor(Color.parseColor("#1A000000"));
+        } else {
+            holder.itemView.setBackgroundColor(Color.TRANSPARENT);
+        }
     }
 
 
@@ -92,6 +111,17 @@ public class AdapterNotify extends RecyclerView.Adapter<AdapterNotify.ViewHolder
 
     public void setPosition(int position) {
         this.position = position;
+    }
+
+    public void setSelectedPosition(int pos) {
+        int prev = selectedPosition;
+        selectedPosition = pos;
+        if (prev != -1) notifyItemChanged(prev);
+        if (pos != -1) notifyItemChanged(pos);
+    }
+
+    public void clearSelection() {
+        setSelectedPosition(-1);
     }
 
 }

@@ -21,4 +21,22 @@
     <string name="add_package">Добавить приложение</string>
     <string name="save_notify">Сохранять уведомления</string>
     <string name="send_fingen">Отправлять в Fingen</string>
+
+    <string name="export_db">Экспорт базы данных</string>
+    <string name="import_db">Импорт базы данных</string>
+    <string name="export_success">База данных экспортирована</string>
+    <string name="import_success">База данных импортирована</string>
+    <string name="export_error">Ошибка экспорта</string>
+    <string name="import_error">Ошибка импорта</string>
+    <string name="filter_all">Все даты</string>
+
+    <string name="export_package">Экспорт пакетов</string>
+    <string name="import_package">Импорт пакетов</string>
+    <string name="export_package_success">Пакеты экспортированы</string>
+    <string name="import_package_success">Пакеты импортированы</string>
+    <string name="export_package_error">Ошибка экспорта пакетов</string>
+    <string name="import_package_error">Ошибка импорта пакетов</string>
+    <string name="import_package_mode_title">Режим импорта</string>
+    <string name="import_package_mode_add">Добавить к существующим</string>
+    <string name="import_package_mode_replace">Заменить все</string>
 </resources>

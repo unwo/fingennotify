@@ -21,4 +21,22 @@
     <string name="add_package">Add package</string>
     <string name="save_notify">Save notify</string>
     <string name="send_fingen">Send Fingen</string>
+
+    <string name="export_db">Export database</string>
+    <string name="import_db">Import database</string>
+    <string name="export_success">Database exported</string>
+    <string name="import_success">Database imported</string>
+    <string name="export_error">Export error</string>
+    <string name="import_error">Import error</string>
+    <string name="filter_all">All dates</string>
+
+    <string name="export_package">Export packages</string>
+    <string name="import_package">Import packages</string>
+    <string name="export_package_success">Packages exported</string>
+    <string name="import_package_success">Packages imported</string>
+    <string name="export_package_error">Package export error</string>
+    <string name="import_package_error">Package import error</string>
+    <string name="import_package_mode_title">Import mode</string>
+    <string name="import_package_mode_add">Add to existing</string>
+    <string name="import_package_mode_replace">Replace all</string>
 </resources>
